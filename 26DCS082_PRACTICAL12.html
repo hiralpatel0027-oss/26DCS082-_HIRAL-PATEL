@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Hira Beauty - 45 Minute Doorstep Delivery</title>
+  
+  <!-- Simple Beginner CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff0f3;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 750px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px solid #ffccd5;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Header */
+    header {
+      background-color: #e91e63;
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    header p {
+      margin: 5px 0 0 0;
+      font-size: 14px;
+    }
+
+    /* Delivery Announcement */
+    .delivery-banner {
+      background-color: #fff9c4;
+      border: 2px dashed #fbc02d;
+      padding: 10px;
+      margin: 15px 0;
+      border-radius: 6px;
+      font-weight: bold;
+      color: #f57f17;
+      font-size: 15px;
+    }
+
+    /* Simple Navigation Links */
+    nav {
+      margin: 15px 0;
+    }
+
+    nav a {
+      color: #e91e63;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Product Cards */
+    .product-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .card {
+      border: 1px solid #ffb3c1;
+      border-radius: 8px;
+      padding: 12px;
+      width: 150px;
+      background-color: #fffafa;
+    }
+
+    .card img {
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .card h3 {
+      font-size: 14px;
+      margin: 8px 0 4px 0;
+      color: #333;
+    }
+
+    .price {
+      color: #e91e63;
+      font-weight: bold;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    /* Button Styling */
+    button {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    button:hover {
+      background-color: #c2185b;
+    }
+
+    /* Cart & Form Box */
+    .box {
+      background-color: #fdf2f4;
+      border: 1px solid #f8bbd0;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 15px 0;
+      text-align: left;
+    }
+
+    .box h2 {
+      margin-top: 0;
+      font-size: 18px;
+      color: #ad1457;
+      border-bottom: 1px solid #f8bbd0;
+      padding-bottom: 5px;
+    }
+
+    /* Form Inputs */
+    label {
+      font-size: 13px;
+      font-weight: bold;
+      color: #444;
+      display: block;
+      margin-top: 8px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 13px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 10px;
+      font-size: 15px;
+      margin-top: 12px;
+      background-color: #e91e63;
+    }
+
+    /* 45-Minute Live Timer Box */
+    #timerBox {
+      display: none;
+      background-color: #e8f5e9;
+      border: 2px solid #4caf50;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .timer-text {
+      font-size: 36px;
+      font-weight: bold;
+      color: #2e7d32;
+      margin: 10px 0;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #777;
+      border-top: 1px solid #eee;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- 1. Header -->
+    <header>
+      <h1>🌸 Hira Beauty</h1>
+      <p>Instant Beauty & Cosmetics - Doorstep Delivery in 45 Minutes</p>
+    </header>
+
+    <!-- 2. Fast Delivery Banner -->
+    <div class="delivery-banner">
+      ⚡ Guaranteed 45-Minute Express Doorstep Delivery!
+    </div>
+
+    <!-- 3. Navigation -->
+    <nav>
+      <a href="#products">Products</a> | 
+      <a href="#cart">My Bag</a> | 
+      <a href="#order">Order Now</a>
+    </nav>
+
+    <!-- 4. Products Section -->
+    <div id="products">
+      <h2 style="color: #ad1457; font-size: 20px;">Popular Beauty Products</h2>
+      <p style="font-size: 13px; color: #666;">Click "Add to Cart" to select products:</p>
+
+      <div class="product-list">
+        
+        <!-- Product 1 -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=300&q=80" alt="Face Serum">
+          <h3>Face Glow Serum</h3>
+          <div class="price">₹399</div>
+          <button onclick="addToCart('Face Glow Serum', 399)">+ Add to Cart</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=300&q=80" alt="Lipstick">
+          <h3>Matte Red Lipstick</h3>
+          <div class="price">₹249</div>
+          <button onclick="addToCart('Matte Red Lipstick', 249)">+ Add to Cart</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=300&q=80" alt="Moisturizer">
+          <h3>Hydra Cream</h3>
+          <div class="price">₹299</div>
+          <button onclick="addToCart('Hydra Cream', 299)">+ Add to Cart</button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=300&q=80" alt="Mascara">
+          <h3>Curling Mascara</h3>
+          <div class="price">₹199</div>
+          <button onclick="addToCart('Curling Mascara', 199)">+ Add to Cart</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 5. Simple Cart Section -->
+    <div class="box" id="cart">
+      <h2>🛍️ My Shopping Bag</h2>
+      <ul id="cartItemsList" style="font-size: 14px; padding-left: 20px;">
+        <li>No items added yet.</li>
+      </ul>
+      <p style="font-weight: bold; font-size: 15px; color: #ad1457;">
+        Total Amount: <span id="totalPrice">₹0</span>
+      </p>
+      <button onclick="clearCart()" style="background-color: #888; font-size: 11px;">Clear Bag</button>
+    </div>
+
+    <!-- 6. Simple Order Form -->
+    <div class="box" id="order">
+      <h2>📍 45-Minute Doorstep Checkout</h2>
+      <form onsubmit="placeOrder(event)">
+        
+        <label>Your Name:</label>
+        <input type="text" id="custName" placeholder="Enter your full name" required>
+
+        <label>Mobile Number (For Rider):</label>
+        <input type="tel" id="custPhone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+
+        <label>Doorstep Delivery Address:</label>
+        <textarea id="custAddress" rows="2" placeholder="House/Flat No, Street, Landmark" required></textarea>
+
+        <label>Payment Mode:</label>
+        <select id="custPayment">
+          <option>Cash on Delivery (Pay at door)</option>
+          <option>UPI / QR Scan at door</option>
+        </select>
+
+        <button type="submit" class="submit-btn">Place Order & Start 45-Min Timer ⚡</button>
+      </form>
+    </div>
+
+    <!-- 7. 45-Minute Live Countdown Timer -->
+    <div id="timerBox">
+      <h3 style="color: #2e7d32; margin-top: 0;">🎉 Order Confirmed! Dispatched!</h3>
+      <p style="font-size: 14px; color: #333;">Your rider is on the way with your cosmetics.</p>
+      
+      <div class="timer-text" id="clockDisplay">45:00</div>
+      <p style="font-size: 13px; color: #555;">⏱️ Time remaining until doorstep arrival</p>
+
+      <p style="font-size: 12px; background: white; padding: 6px; border-radius: 4px; display: inline-block;">
+        🛵 Rider: <strong>Ramesh (Electric Scooter HB-02)</strong>
+      </p>
+    </div>
+
+    <!-- 8. Footer -->
+    <footer>
+      <p>© 2026 Hira Beauty • Simple 1st Year College Web Tech Project</p>
+    </footer>
+
+  </div>
+
+  <!-- Simple Beginner JavaScript -->
+  <script>
+    // Variables
+    let cartItems = [];
+    let cartTotal = 0;
+    let secondsLeft = 45 * 60; // 45 minutes
+    let countdownInterval = null;
+
+    // Add item to cart
+    function addToCart(productName, price) {
+      cartItems.push({ name: productName, price: price });
+      cartTotal += price;
+
+      updateCartUI();
+      alert(productName + " added to your bag!");
+    }
+
+    // Update cart list and total
+    function updateCartUI() {
+      let listElement = document.getElementById("cartItemsList");
+      let totalElement = document.getElementById("totalPrice");
+
+      if (cartItems.length === 0) {
+        listElement.innerHTML = "<li>No items added yet.</li>";
+        totalElement.innerText = "₹0";
+        return;
+      }
+
+      listElement.innerHTML = "";
+      for (let i = 0; i < cartItems.length; i++) {
+        let li = document.createElement("li");
+        li.innerText = cartItems[i].name + " - ₹" + cartItems[i].price;
+        listElement.appendChild(li);
+      }
+
+      totalElement.innerText = "₹" + cartTotal;
+    }
+
+    // Clear cart
+    function clearCart() {
+      cartItems = [];
+      cartTotal = 0;
+      updateCartUI();
+    }
+
+    // Place order and start 45-minute countdown
+    function placeOrder(event) {
+      event.preventDefault(); // Prevent form from refreshing page
+
+      if (cartItems.length === 0) {
+        alert("Please add at least 1 beauty product to your bag before ordering!");
+        return;
+      }
+
+      let name = document.getElementById("custName").value;
+
+      // Show the timer box
+      let timerBox = document.getElementById("timerBox");
+      timerBox.style.display = "block";
+      timerBox.scrollIntoView({ behavior: 'smooth' });
+
+      // Start 45:00 countdown clock
+      startTimer();
+
+      alert("Thank you " + name + "! Your order is placed. Delivering within 45 minutes!");
+    }
+
+    // 45-minute countdown function
+    function startTimer() {
+      if (countdownInterval) {
+        clearInterval(countdownInterval);
+      }
+
+      secondsLeft = 45 * 60; // reset to 45 mins
+      updateClock();
+
+      countdownInterval = setInterval(function() {
+        secondsLeft--;
+
+        if (secondsLeft <= 0) {
+          clearInterval(countdownInterval);
+          document.getElementById("clockDisplay").innerText = "00:00";
+          alert("Ding dong! Your Hira Beauty package has arrived at your door!");
+          return;
+        }
+
+        updateClock();
+      }, 1000);
+    }
+
+    // Convert seconds into MM:SS format
+    function updateClock() {
+      let mins = Math.floor(secondsLeft / 60);
+      let secs = secondsLeft % 60;
+
+      let formattedMins = mins < 10 ? "0" + mins : mins;
+      let formattedSecs = secs < 10 ? "0" + secs : secs;
+
+      document.getElementById("clockDisplay").innerText = formattedMins + ":" + formattedSecs;
+    }
+  </script>
+
+</body>
+</html>
